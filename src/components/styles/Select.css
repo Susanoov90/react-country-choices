@@ -1,0 +1,37 @@
+.country-option{
+    display: flex;
+    padding: 1rem;
+}
+
+.country-overall{
+    margin-top: 1rem;
+}
+
+.country-option:hover, .isSelected{
+    background-color: rgba(0, 200, 222, 0.51);
+}
+
+
+.country-option span{
+    margin-left : 0.5rem;
+}
+
+.container-textField{
+    position : relative
+}
+
+.selected-country-choice{
+    position: absolute;
+    height: 50%;
+    left: 1%;
+    top: 22%;
+}
+
+.selected-country-choice img{
+    object-fit: contain;
+    height: 100%;
+}
+
+#country-select{
+    padding-left: 70px;
+}
