@@ -1,22 +1,48 @@
-import { useState } from "react"
-import Country from "../Country"
+import { useState } from "react";
+import Country from "../Country";
+import { Result } from "./Result";
 
 export const Form = () => {
-    const [form, setForm] = useState({
-        title: "",
-        country: ""
-    })
+  const [form, setForm] = useState({
+    title: "",
+    country: ""
+  });
 
-    const handleSelectCountry = (val) => {
-        return val
-    }
+  const [submitted, setSubmitted] = useState(false);
 
-    return (
-        <div style={{ width: "100%", padding: 10 }}>
-            <input onChange={(e) => setForm({ ...form, title: e.target.value })} type="text" placeholder="Enter a title" style={{ width: "100%" }} />
-            <Country.Select translateTo="eng" flags onChangeCountry={(value) => setForm({ ...form, country: handleSelectCountry(value) })} />
+  const handleSelectCountry = (val) => val;
 
-            <button onClick={console.log("form Submit", form)} style={{ padding: 10 }}>Submit</button>
-        </div>
-    )
-}
+  const handleSubmit = () => {
+    setSubmitted(true);
+    console.log("Form Submit", form);
+  };
+
+  const handleChange = (key, value) => {
+    setForm({ ...form, [key]: value });
+    setSubmitted(false);
+  };
+
+  return (
+    <div>
+      <input
+        type="text"
+        placeholder="Enter a title"
+        style={{ width: "100%" }}
+        onChange={(e) => handleChange("title", e.target.value)}
+        value={form.title}
+      />
+
+      <Country.Select
+        translateTo="eng"
+        flags
+        onChangeCountry={(value) => handleChange("country", handleSelectCountry(value))}
+      />
+
+      <button onClick={handleSubmit} style={{ padding: 10 }}>
+        Submit
+      </button>
+
+      {submitted && <Result title={form.title} country={form.country} />}
+    </div>
+  );
+};
