@@ -29,6 +29,7 @@ Pour que le composant fonctionne correctement  **et que l'interface se recharge 
 ```js
 import { useState } from "react";
 import Country from "react-country-choices";
+import { Result } from "./Result"; // composant d'affichage du résultat
 
 export const Form = () => {
   const [form, setForm] = useState({
@@ -36,39 +37,50 @@ export const Form = () => {
     country: ""
   });
 
-  // Fonction à adapter pour gérer dynamiquement la sélection
+  const [submitted, setSubmitted] = useState(false);
+
+  // Fonction pivot : ici vous pouvez adapter dynamiquement le comportement
   const handleSelectCountry = (val) => {
-    // Il retourne le nom du pays constamment
-    return val;
+    return val; // ou appliquez une logique personnalisée
+  };
+
+  // Réinitialise l'affichage des résultats à chaque modification
+  const handleChange = (key, value) => {
+    setForm({ ...form, [key]: value });
+    setSubmitted(false); // empêche d'afficher Result tant qu'on n'a pas cliqué "Submit"
+  };
+
+  const handleSubmit = () => {
+    setSubmitted(true);
+    console.log("Form Submit", form);
   };
 
   return (
-    <div style={{ width: "100%", padding: 10 }}>
+    <div style={{ width: "80%", marginTop: "2rem" }}>
       <input
-        onChange={(e) => setForm({ ...form, title: e.target.value })}
         type="text"
         placeholder="Enter a title"
-        style={{ width: "100%" }}
+        style={{ width: "100%", padding: "1rem" }}
+        onChange={(e) => handleChange("title", e.target.value)}
+        value={form.title}
       />
 
       <Country.Select
-        translateTo="kor"
+        translateTo="eng"
         flags
         onChangeCountry={(value) =>
-          setForm({ ...form, country: handleSelectCountry(value) })
+          handleChange("country", handleSelectCountry(value))
         }
       />
 
-      <button
-        onClick={() => console.log("form Submit", form)}
-        style={{ padding: 10 }}
-      >
+      <button onClick={handleSubmit} style={{ padding: 10 }}>
         Submit
       </button>
+
+      {submitted && <Result title={form.title} country={form.country} />}
     </div>
   );
 };
-
 ```
 
 ## ⚙️ Props disponibles
