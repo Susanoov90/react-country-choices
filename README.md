@@ -22,7 +22,7 @@ npm install react-country-choices
 
 Pour que le composant fonctionne correctement  **et que l'interface se recharge automatiquement en fonction du pays sélectionné** , vous devez impérativement créer une fonction `handleSelectCountry()` qui actualise l'état selon la logique métier désirée.
 
-```
+```JSX
 import { useState } from "react";
 import Country from "react-country-choices";
 
@@ -74,7 +74,6 @@ export const Form = () => {
 | `translateTo`     | `string`  | Code ISO de la langue pour traduire les noms de pays `<br>` (ex: `"kor"` pour coréen, `"fr"` pour français, etc.) |
 | `flags`           | `boolean` | Affiche les drapeaux des pays à côté du nom                                                                            |
 | `onChangeCountry` | `func`    | Callback qui renvoie la valeur sélectionnée pour `<br>` mettre à jour dynamiquement le formulaire                    |
-
 
 ## 📁 Structure du package
 
