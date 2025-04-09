@@ -28,7 +28,7 @@ Pour que le composant fonctionne correctement  **et que l'interface se recharge 
 
 ```js
 import { useState } from "react";
-import Country from "react-country-choices";
+import Country from "../Country";
 import { Result } from "./Result"; // composant d'affichage du résultat
 
 export const Form = () => {
