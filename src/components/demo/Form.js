@@ -23,11 +23,11 @@ export const Form = () => {
   };
 
   return (
-    <div>
+    <div style={{ width: "80%", marginTop: "2rem"}}>
       <input
         type="text"
         placeholder="Enter a title"
-        style={{ width: "100%" }}
+        style={{ width: "100%", padding : "1rem" }}
         onChange={(e) => handleChange("title", e.target.value)}
         value={form.title}
       />

@@ -3,7 +3,7 @@ import { Result } from './components/demo/Result'
 
 function App() {
   return (
-      <div style={{ width: "70%", padding: 10 }}>
+      <div style={{ width: "100%", display: 'flex', justifyContent: 'center' }}>
         <Form />
       </div>
       
