@@ -1,11 +1,12 @@
-import { useState } from 'react';
-import Select from './components/imports/Select';
-import Country from './components/Country';
 import { Form } from './components/demo/Form';
+import { Result } from './components/demo/Result'
 
 function App() {
   return (
-      <Form />
+      <div style={{ width: "70%", padding: 10 }}>
+        <Form />
+      </div>
+      
   );
 }
 
