@@ -85,10 +85,29 @@ react-country-choices/
 │   ├── Checkbox.js
 │   ├── Radio.js
 │   └── Select.js
+│   └── demo/
+│       └── Form.js
 ├── context/
 │   └── CountryContext.js
 ├── export/
 │   └── Country.js
-└── global/
-    └── Global.js
+├── global/
+│   └── Global.js
+├── App.js
+└── index.js
 ```
+
+## 📘 Roadmap
+
+- Migration progressive vers **TypeScript** prévue pour améliorer la robustesse et la documentation du code.
+
+> 🛠️ **Cette transition est en réflexion, le projet étant encore en phase d’évolution.**
+
+- Modularisation avancée des composants
+- Ajout de tests unitaires
+- Création d’une documentation en ligne interactive
+
+## 🙇‍♂️ Mentions spéciales
+
+- [**REST Countries API**](https://restcountries.com/) : utilisée pour récupérer les données des pays (noms, codes, drapeaux, langues…)
+- Merci à la communauté open source pour les idées et les contributions futures 🙌
