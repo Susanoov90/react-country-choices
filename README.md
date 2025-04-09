@@ -106,6 +106,44 @@ Cette fonction permet :
 | `flags`           | `boolean` | Affiche les drapeaux des pays à côté du nom                                                                                                                                                                                  |
 | `onChangeCountry` | `func`    | Callback qui renvoie la valeur sélectionnée pour `<br>` mettre à jour dynamiquement le formulaire                                                                                                                          |
 
+### 🌍 Langues prises en charge (`translateTo`)
+
+Le composant `react-country-choices` vous permet d'afficher les noms de pays dans différentes langues en utilisant la prop `translateTo`. Voici les codes ISO pris en charge ainsi que leur statut de fonctionnement :
+
+| Code ISO | Langue               | Fonctionne |
+| -------- | -------------------- | ---------- |
+| `ara`  | Arabe                | ✅ Oui     |
+| `bre`  | Breton               | ✅ Oui     |
+| `ces`  | Tchèque             | ✅ Oui     |
+| `cym`  | Gallois              | ✅ Oui     |
+| `deu`  | Allemand             | ✅ Oui     |
+| `est`  | Estonien             | ✅ Oui     |
+| `fin`  | Finnois              | ✅ Oui     |
+| `hrv`  | Croate               | ❌ Non     |
+| `hun`  | Hongrois             | ✅ Oui     |
+| `ita`  | Italien              | ✅ Oui     |
+| `jpn`  | Japonais             | ❌ Non     |
+| `kor`  | Coréen              | ✅ Oui     |
+| `nld`  | Néerlandais         | ✅ Oui     |
+| `per`  | Persan               | ❌ Non     |
+| `pol`  | Polonais             | ✅ Oui     |
+| `por`  | Portugais            | ✅ Oui     |
+| `rus`  | Russe                | ✅ Oui     |
+| `slk`  | Slovaque             | ✅ Oui     |
+| `spa`  | Espagnol             | ✅ Oui     |
+| `srp`  | Serbe                | ✅ Oui     |
+| `swe`  | Suédois             | ✅ Oui     |
+| `tur`  | Turc                 | ✅ Oui     |
+| `urd`  | Ourdou               | ✅ Oui     |
+| `zho`  | Chinois (simplifié) | ❌ Non     |
+
+---
+
+✅ **Remarques** :
+
+* Les langues marquées comme ❌ ne fonctionnent pas actuellement car l'API ne renvoie pas de traduction valide ou exploitable dans ces cas.
+* Vous pouvez contribuer pour élargir la compatibilité ou corriger les exceptions !
+
 ## 📁 Structure du package
 
 ```plaintext
