@@ -36,7 +36,7 @@ export const Form = () => {
 
   // Fonction à adapter pour gérer dynamiquement la sélection
   const handleSelectCountry = (val) => {
-    // Par exemple, modifier ici la logique selon les besoins du pays sélectionné
+    // Il retourne le nom du pays constamment
     return val;
   };
 
