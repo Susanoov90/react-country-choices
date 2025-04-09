@@ -1,4 +1,4 @@
-[react-country-choices logo](./LogoReactCountryChoices.png)
+[react-country-choices logo](./logoRCC.png)
 
 # react-country-choices 🌍
 
