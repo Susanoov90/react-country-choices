@@ -1,5 +1,3 @@
-[react-country-choices logo](./logoRCC.png)
-
 # react-country-choices 🌍
 
 `react-country-choices` est un composant React modulaire permettant d’intégrer facilement un sélecteur de pays dans vos formulaires.Il est pensé pour être dynamique et réactif selon le pays choisi, avec prise en charge des traductions, des drapeaux, et la gestion des champs selon le pays sélectionné.
@@ -80,16 +78,33 @@ export const Form = () => {
       {submitted && <Result title={form.title} country={form.country} />}
     </div>
   );
-};
+
 ```
+
+### 🔍 Pourquoi `handleSelectCountry` est crucial ?
+
+La fonction `handleSelectCountry(val)` permet de :
+
+* **appliquer une logique personnalisée** selon le pays sélectionné
+* **modifier dynamiquement le formulaire ou l'affichage** en fonction du contexte pays
+* garder le système  **ouvert à l'évolution** , sans figer le comportement
+
+
+### 🧠 Astuce : `handleChange`
+
+Cette fonction permet :
+
+* une **gestion centralisée des champs**
+* un reset automatique de l’état `submitted` pour éviter que `Result` s’affiche avant validation
+
 
 ## ⚙️ Props disponibles
 
-| Prop                | Type        | Description                                                                                                                                                                                                                    |
-| ------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `translateTo`     | `string`  | Code ISO de la langue pour traduire les noms de pays `<br>` (ex: `"kor"` pour coréen, `"fr"` pour français, etc.) Voir l'’API publique **[REST Countries](https://restcountries.com/)** pour comprendre les props |
-| `flags`           | `boolean` | Affiche les drapeaux des pays à côté du nom                                                                                                                                                                                 |
-| `onChangeCountry` | `func`    | Callback qui renvoie la valeur sélectionnée pour `<br>` mettre à jour dynamiquement le formulaire                                                                                                                         |
+| Prop                | Type        | Description                                                                                                                                                                                                                     |
+| ------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `translateTo`     | `string`  | Code ISO de la langue pour traduire les noms de pays `<br>` (ex: `"kor"` pour coréen, `"fra"` pour français, etc.) Voir l'’API publique **[REST Countries](https://restcountries.com/)** pour comprendre les props |
+| `flags`           | `boolean` | Affiche les drapeaux des pays à côté du nom                                                                                                                                                                                  |
+| `onChangeCountry` | `func`    | Callback qui renvoie la valeur sélectionnée pour `<br>` mettre à jour dynamiquement le formulaire                                                                                                                          |
 
 ## 📁 Structure du package
 
