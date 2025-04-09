@@ -130,6 +130,7 @@ react-country-choices/
 
 ## 📘 Roadmap
 
+- Ceci est la ***1ere version***. Elle présente juste la solution prevue.
 - Migration progressive vers **TypeScript** prévue pour améliorer la robustesse et la documentation du code.
 
 > 🛠️ **Cette transition est en réflexion, le projet étant encore en phase d’évolution.**
