@@ -14,7 +14,7 @@ export const Form = () => {
     return (
         <div style={{ width: "100%", padding: 10 }}>
             <input onChange={(e) => setForm({ ...form, title: e.target.value })} type="text" placeholder="Enter a title" style={{ width: "100%" }} />
-            <Country.Select translateTo="kor" flags onChangeCountry={(value) => setForm({ ...form, country: handleSelectCountry(value) })} />
+            <Country.Select translateTo="eng" flags onChangeCountry={(value) => setForm({ ...form, country: handleSelectCountry(value) })} />
 
             <button onClick={console.log("form Submit", form)} style={{ padding: 10 }}>Submit</button>
         </div>

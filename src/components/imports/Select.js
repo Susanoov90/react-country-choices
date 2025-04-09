@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import { useCountryContext } from "../../context/CountryContext";
+import { useCountryContext } from "../context/CountryContext";
 import { Autocomplete, TextField } from '@mui/material';
 import PropTypes from "prop-types";
-import './styles/Select.css'
+import '../styles/Select.css'
 import { useState } from "react";
 
 const Select = ({ ...props }) => {
