@@ -1,3 +1,5 @@
+[react-country-choices logo](./LogoReactCountryChoices.png)
+
 # react-country-choices 🌍
 
 `react-country-choices` est un composant React modulaire permettant d’intégrer facilement un sélecteur de pays dans vos formulaires.Il est pensé pour être dynamique et réactif selon le pays choisi, avec prise en charge des traductions, des drapeaux, et la gestion des champs selon le pays sélectionné.
