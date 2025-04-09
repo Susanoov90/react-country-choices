@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# react-country-choices 🌍
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+`react-country-choices` est un composant React modulaire permettant d’intégrer facilement un sélecteur de pays dans vos formulaires. Il est pensé pour être dynamique et réactif selon le pays choisi, avec prise en charge des traductions et des drapeaux.
 
-## Available Scripts
+## ✨ Fonctionnalités
 
-In the project directory, you can run:
+- ✅ Sélecteur de pays réactif
+- 🌐 Traduction des noms de pays (`translateTo`)
+- 🚩 Affichage des drapeaux (`flags`)
+- ⚡ Callback dynamique (`onChangeCountry`) pour capturer le pays sélectionné
+- 📦 Léger et facile à intégrer dans tout projet React
 
-### `npm start`
+## 📦 Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+npm install react-country-choices
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Exemple d'utilisation de base
 
-### `npm test`
+💡 **Note importante** :
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Pour que le composant fonctionne correctement  **et que l'interface se recharge automatiquement en fonction du pays sélectionné** , vous devez impérativement créer une fonction `handleSelectCountry()` qui actualise l'état selon la logique métier désirée.
 
-### `npm run build`
+```
+import { useState } from "react";
+import Country from "react-country-choices";
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+export const Form = () => {
+  const [form, setForm] = useState({
+    title: "",
+    country: ""
+  });
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  // Fonction à adapter pour gérer dynamiquement la sélection
+  const handleSelectCountry = (val) => {
+    // Par exemple, modifier ici la logique selon les besoins du pays sélectionné
+    return val;
+  };
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  return (
+    <div style={{ width: "100%", padding: 10 }}>
+      <input
+        onChange={(e) => setForm({ ...form, title: e.target.value })}
+        type="text"
+        placeholder="Enter a title"
+        style={{ width: "100%" }}
+      />
 
-### `npm run eject`
+      <Country.Select
+        translateTo="kor"
+        flags
+        onChangeCountry={(value) =>
+          setForm({ ...form, country: handleSelectCountry(value) })
+        }
+      />
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+      <button
+        onClick={() => console.log("form Submit", form)}
+        style={{ padding: 10 }}
+      >
+        Submit
+      </button>
+    </div>
+  );
+};
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## ⚙️ Props disponibles
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+| Prop                | Type        | Description                                                                                                               |
+| ------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `translateTo`     | `string`  | Code ISO de la langue pour traduire les noms de pays `<br>` (ex: `"kor"` pour coréen, `"fr"` pour français, etc.) |
+| `flags`           | `boolean` | Affiche les drapeaux des pays à côté du nom                                                                            |
+| `onChangeCountry` | `func`    | Callback qui renvoie la valeur sélectionnée pour `<br>` mettre à jour dynamiquement le formulaire                    |
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📁 Structure du package
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```plaintext
+react-country-choices/
+├── components/
+│   ├── Checkbox.js
+│   ├── Radio.js
+│   └── Select.js
+├── context/
+│   └── CountryContext.js
+├── export/
+│   └── Country.js
+└── global/
+    └── Global.js
+```
