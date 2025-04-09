@@ -111,19 +111,21 @@ Cette fonction permet :
 ```plaintext
 react-country-choices/
 ├── components/
-│   ├── Checkbox.js
-│   ├── Radio.js
-│   └── Select.js
-│   └── demo/
-│       └── Form.js
-├── context/
-│   └── CountryContext.js
-├── export/
+│   ├── imports/
+│   │   ├── Checkbox.js
+│   │   ├── Radio.js
+│   │   └── Select.js
+│   ├── context/
+│   │   └── CountryContext.js
+│   ├── demo/
+│   │   ├── Form.js
+│   │   ├── Form.css
+│   │   └── Result.js
+│   └── styles/
+│       └── Select.css
 │   └── Country.js
-├── global/
-│   └── Global.js
 ├── App.js
-└── index.js
+├── index.js
 ```
 
 ## 📘 Roadmap
