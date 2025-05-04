@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Country from "../Country";
 import { Result } from "./Result";
-
-export const Form = () => {
+import logoRCC from '../../logoRCC.png'
+export const FormWithSelect = () => {
     const [form, setForm] = useState({
       title: "",
       country: ""
@@ -28,6 +28,7 @@ export const Form = () => {
   
     return (
       <div style={{ width: "80%", marginTop: "2rem" }}>
+        <img style={{width: "14rem", height:"14rem"}} src={logoRCC}/>
         <input
           type="text"
           placeholder="Enter a title"
@@ -37,8 +38,7 @@ export const Form = () => {
         />
   
         <Country.Select
-          translateTo="fra"
-          flags
+          translateTo="eng" //eng, kor, ara, bre, deu, fin, ita, etc.
           onChangeCountry={(value) =>
             handleChange("country", handleSelectCountry(value))
           }

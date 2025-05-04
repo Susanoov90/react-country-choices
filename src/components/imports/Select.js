@@ -19,10 +19,6 @@ const Select = ({ ...props }) => {
 
     const { setParameters, newCountries } = useCountryContext()
     const { translateTo, flags, desc, onChangeCountry } = props
-    let { value } = props
-
-    // console.log("onChange", onChangeCountry)
-    // console.log("value CountrySelected", value)
 
     useEffect(() => {
         handleSelect("")
